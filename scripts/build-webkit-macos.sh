@@ -7,6 +7,8 @@ cd $WEBKIT_DIR-out
 
 CC=zcc
 CXX=z++
+AR=zar
+
 cmake \
 	-DPORT="JSCOnly" \
 	-DENABLE_STATIC_JSC=ON \
