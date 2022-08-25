@@ -3,9 +3,6 @@
 	url = https://github.com/h2o/picohttpparser.git
 ignore = dirty
 depth = 1
-[submodule "WebKit"]
-	path = deps/WebKit
-	url = https://github.com/Jarred-Sumner/WebKit.git
 [submodule "mimalloc"]
 	path = deps/mimalloc
 	url = https://github.com/Jarred-Sumner/mimalloc.git
