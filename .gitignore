@@ -1,6 +1,6 @@
 deps/*.a
 deps/*.o
-/deps/WebKit
+/deps/WebKit*
 /bun-webkit
 zig-cache
 zig-out

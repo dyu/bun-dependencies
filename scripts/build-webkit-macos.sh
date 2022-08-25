@@ -2,8 +2,11 @@ if [ "$GH_ACTIONS" != "true" ] ; then
 	source ./scripts/setup-env.sh
 fi
 
-cd $WEBKIT_DIR
+mkdir -p $WEBKIT_DIR-out
+cd $WEBKIT_DIR-out
 
+CC=zcc
+CXX=z++
 cmake \
 	-DPORT="JSCOnly" \
 	-DENABLE_STATIC_JSC=ON \
@@ -23,7 +26,7 @@ fi
 
 CFLAGS="$CFLAGS -ffat-lto-objects" && \
 CXXFLAGS="$CXXFLAGS -ffat-lto-objects" && \
-	cmake --build $WEBKIT_DIR --config $WEBKIT_RELEASE_TYPE -- "jsc" -j$(sysctl -n hw.logicalcpu)
+	cmake --build $WEBKIT_DIR-out --config $WEBKIT_RELEASE_TYPE -- "jsc" -j$(sysctl -n hw.logicalcpu)
 
 if [ $? -ne 0 ] ; then
 	printf "Failed to build WebKit.\n"
